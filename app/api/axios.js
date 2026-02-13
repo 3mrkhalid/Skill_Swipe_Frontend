@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken, setToken, clearToken } from "../auth/tokenManager";
 
 const api = axios.create({
-  baseURL: "https://skillswipebackend-production.up.railway.app/",
+  baseURL: "/api",
   withCredentials: true,
 });
 
