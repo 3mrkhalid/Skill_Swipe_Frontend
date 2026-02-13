@@ -1,15 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-const config = {
-  darkMode: 'class',
-  
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://skillswipebackend-production.up.railway.app/:path*',
+      },
+    ];
   },
-  plugins: [],
 };
 
-export default config;
+export default nextConfig;
